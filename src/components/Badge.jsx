@@ -1,18 +1,18 @@
 import React from 'react'
 import { FaCheck } from "react-icons/fa6";
 
-const Badge = ({Name,Price, p1text,p2text, p3text, p4text ,bgColor,buttonText, ptextColour }) => {
+const Badge = ({Name,Price, p1text,p2text, p3text, p4text ,bgColor,buttonText, ptextColour,  iconColour , buttonbg, buttonTextColor }) => {
   return (
     <div className= {`w-[330px] h-[525px]  px-8 py-8  rounded-lg ${bgColor}`} >
 
         <div >
-            <p className='text-[20px] font-dmSans font-semibold'>{Name}</p>
+            <p className={`text-[20px] ${ptextColour} font-dmSans font-semibold`}>{Name}</p>
         </div>
 
         <div className=' flex'>
-            <p className='text-[44px] font-inter font-semibold' >{Price}</p>
+            <p className={`text-[44px] font-inter font-semibold ${ptextColour}`} >{Price}</p>
             <div className='flex items-end mb-2'>
-                <p className='font-inter font-semibold text-[14px] text-[#656565]'>/month</p>
+                <p className={`font-inter font-semibold text-[14px] text-[#656565]`}>/month</p>
 
             </div>
 
@@ -24,42 +24,42 @@ const Badge = ({Name,Price, p1text,p2text, p3text, p4text ,bgColor,buttonText, p
             <div className='flex items-center'>
 
 
-            <FaCheck color='#3669C9'/>
+            <FaCheck color={iconColour}/>
 
 
-            <p className='font-bold font-dmSans px-4'>{p1text}</p>
+            <p className={`font-bold font-dmSans px-4 ' ${ptextColour}`}>{p1text}</p>
             </div>
             
 
             <div className='flex items-center' >
 
       
-            <FaCheck color='#3669C9'/>
+            <FaCheck color={iconColour}/>
 
 
-            <p className='font-bold font-dmSans px-4'>{p2text}</p>
+            <p className={`font-bold font-dmSans px-4 ${ptextColour}`}>{p2text}</p>
             </div>
             <div className="flex items-center">
 
-            <FaCheck color='#3669C9'/>
+            <FaCheck color={iconColour}/>
 
 
-            <p className='font-bold font-dmSans px-4'>{p3text}</p>
+            <p className={`font-bold font-dmSans px-4 ${ptextColour}`}>{p3text}</p>
             </div>
 
             <div className='flex items-center'>
 
-            <FaCheck color='#3669C9'/>
+            <FaCheck color={iconColour}/>
 
 
-            <p className='font-bold font-dmSans px-4'>{p4text}</p>
+            <p className={`font-bold font-dmSans px-4 ${ptextColour}`}>{p4text}</p>
             </div>
 
         </div>
 
 
-        <div className='w-[230px] h-[50px] rounded-md border border-gray-400 flex items-center justify-center'>
-            <button >{buttonText}</button>
+        <div className={`w-[230px] h-[50px] rounded-md border border-gray-400 flex items-center justify-center ${buttonbg}`}>
+            <button className={`${buttonTextColor}`}  >{buttonText}</button>
         </div>
 
 

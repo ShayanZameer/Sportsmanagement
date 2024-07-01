@@ -23,6 +23,7 @@ export default {
         dmSans: ['DM Sans', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      
 
      
     },
