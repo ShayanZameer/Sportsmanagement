@@ -60,7 +60,7 @@ const App = () => {
         <Warning heading="Remove User" warningText="Are you sure you want to remove
 “User Name” from the app" /> */}
 
-<Toggleswitch isOn={isOn} handleToggle={handleToggle} />
+{/* <Toggleswitch isOn={isOn} handleToggle={handleToggle} /> */}
 
 
 {/* <Asidedetails text="Users" icon={<TbUsers color='white ' height="20" width="20"/>}/> */}
@@ -68,26 +68,6 @@ const App = () => {
 {/* <Searchinput/> */}
 
 <Assignbadge heading="Assign Badge"  />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-        
-
-
 
 
     </div>
