@@ -15,6 +15,9 @@ import Badge from './components/Badge';
 import Warning from './components/Warning';
 
 import Toggleswitch from './components/Toggleswitch';
+
+import { TbUsers } from "react-icons/tb";
+import Asidedetails from './components/Asidedetails';
 import { useState } from 'react';
 
 
@@ -54,7 +57,13 @@ const App = () => {
         <Warning heading="Remove User" warningText="Are you sure you want to remove
 “User Name” from the app" /> */}
 
-<Toggleswitch isOn={isOn} handleToggle={handleToggle} />
+{/* <Toggleswitch isOn={isOn} handleToggle={handleToggle} /> */}
+
+
+<Asidedetails text="Users" icon={<TbUsers color='white ' height="20" width="20"/>}/>
+
+
+
 
 
 
