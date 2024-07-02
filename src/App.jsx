@@ -23,6 +23,12 @@ import Searchinput from './components/Searchinput';
 import Assignbadge from './components/Assignbadge';
 import { useState } from 'react';
 
+import Login from './Screens/Login';
+
+import Aside from './components/Aside';
+
+import Dashboard from './Screens/Dashboard';
+
 
 
 const App = () => {
@@ -34,7 +40,11 @@ const App = () => {
   };
   return (
 
-    <div className="m-10">
+    <div className="">
+
+      <Dashboard/>
+
+
 {/* 
 <Input
         labelText="Username"
@@ -67,7 +77,7 @@ const App = () => {
 
 {/* <Searchinput/> */}
 
-<Assignbadge heading="Assign Badge"  />
+{/* <Assignbadge heading="Assign Badge"  /> */}
 
 
     </div>
