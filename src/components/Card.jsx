@@ -11,7 +11,7 @@ import pic5 from "../assets/images/5.png";
 
 const Card = () => {
   return (
-    <div className="border border-gray-300 rounded-lg overflow-hidden py-2 shadow-md max-w-72">
+    <div className="border border-gray-300 rounded-lg overflow-hidden py-2 shadow-md max-w-72 ">
 
        <div className='flex justify-center'>
       {/* Image */}
