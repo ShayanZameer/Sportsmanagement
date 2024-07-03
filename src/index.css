@@ -4,40 +4,44 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-section::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
 
+.main-section::-webkit-scrollbar-track {
+  background: #e0e0e0;
+
+  border-radius: 8px;
+
+}
+
+.main-section::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff8c00 0%, #ff6347 100%);
   
-  /* WebKit Browsers (Chrome, Safari) */
-  .main-section::-webkit-scrollbar {
-    width: 0px; /* Width of the scrollbar */
-    height: 0px; /* Height for horizontal scrollbar (if applicable) */
-  }
+  border-radius: 8px;
   
-  .main-section::-webkit-scrollbar-track {
-    background: #e0e0e0; /* Track background color */
-    border-radius: 8px; /* Rounded corners for the track */
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); /* Shadow for track */
-  }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   
-  .main-section::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #ff8c00 0%, #ff6347 100%); /* Gradient for the thumb */
-    border-radius: 8px; /* Rounded corners for the thumb */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for the thumb */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease-in-out; /* Smooth transition */
-  }
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease-in-out;
   
-  .main-section::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #ff6347 0%, #ff4500 100%); /* Thumb color on hover */
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
-    transform: scale(1.1); /* Slightly larger thumb on hover */
-  }
+}
+
+.main-section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff6347 0%, #ff4500 100%);
   
- 
- 
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   
+  transform: scale(1.1);
   
-  
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
+}
+
+
+
+
+
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

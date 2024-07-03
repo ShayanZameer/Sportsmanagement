@@ -30,6 +30,15 @@ import Aside from './components/Aside';
 import Dashboard from './Screens/Dashboard';
 
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
+
+
 
 const App = () => {
 
@@ -38,14 +47,30 @@ const App = () => {
   const handleToggle = () => {
     setIsOn(prevState => !prevState);
   };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+  ]);
   return (
+
+
 
     <div className="">
 
-      <Dashboard/>
+      {/* <Dashboard/> */}
 
 
-{/* 
+
+
+
+      {/* 
+
+
+
+
 <Input
         labelText="Username"
         placeholder="Enter your email"
@@ -62,26 +87,26 @@ const App = () => {
 
       {/* <Userdetail/> */}
 
-{/* 
+      {/* 
       <Badge Name="Business" Price="$120" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Edit" bgColor="bg-[#3669C9]" ptextColour="text-[#FFFFFF]" iconColour="white" buttonTextColor="text-[#3669C9]" 
         buttonbg="bg-[white]"/> */}
 
-{/* 
+      {/* 
         <Warning heading="Remove User" warningText="Are you sure you want to remove
 “User Name” from the app" /> */}
 
-{/* <Toggleswitch isOn={isOn} handleToggle={handleToggle} /> */}
+      {/* <Toggleswitch isOn={isOn} handleToggle={handleToggle} /> */}
 
 
-{/* <Asidedetails text="Users" icon={<TbUsers color='white ' height="20" width="20"/>}/> */}
+      {/* <Asidedetails text="Users" icon={<TbUsers color='white ' height="20" width="20"/>}/> */}
 
-{/* <Searchinput/> */}
+      {/* <Searchinput/> */}
 
-{/* <Assignbadge heading="Assign Badge"  /> */}
+      {/* <Assignbadge heading="Assign Badge"  /> */}
 
 
     </div>
-    
+
   )
 }
 
