@@ -48,12 +48,7 @@ const App = () => {
     setIsOn(prevState => !prevState);
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Login />,
-    },
-  ]);
+
   return (
 
 
