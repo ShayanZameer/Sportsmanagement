@@ -3,3 +3,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+  
+  /* WebKit Browsers (Chrome, Safari) */
+  .main-section::-webkit-scrollbar {
+    width: 0px; /* Width of the scrollbar */
+    height: 0px; /* Height for horizontal scrollbar (if applicable) */
+  }
+  
+  .main-section::-webkit-scrollbar-track {
+    background: #e0e0e0; /* Track background color */
+    border-radius: 8px; /* Rounded corners for the track */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); /* Shadow for track */
+  }
+  
+  .main-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff8c00 0%, #ff6347 100%); /* Gradient for the thumb */
+    border-radius: 8px; /* Rounded corners for the thumb */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for the thumb */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease-in-out; /* Smooth transition */
+  }
+  
+  .main-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ff6347 0%, #ff4500 100%); /* Thumb color on hover */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+    transform: scale(1.1); /* Slightly larger thumb on hover */
+  }
+  
+ 
+ 
+  
+  
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
