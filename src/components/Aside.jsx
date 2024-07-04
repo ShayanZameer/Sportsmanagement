@@ -34,10 +34,10 @@ const Aside = () => {
             <p className='text-[#ffffff] font-dmSans'>JBSKATE</p>
           </div>
           <div className='flex flex-col items-center mr-10 space-y-4 my-3'>
-            <Asidedetails text="PLAYERS" icon={<TfiMedall color='white' height="20" width="20" link="/players" />} />
-            <Asidedetails text="USERS" icon={<TbUsers color='white' height="20" width="20" link="users" />} />
-            <Asidedetails text="STORE" icon={<FaStore color='white' height="20" width="20" link="/store" />} />
-            <Asidedetails text="BADGES" icon={<TfiMedall color='white' height="20" width="20" link="/badges" />} />
+            <Asidedetails text="PLAYERS" icon={<TfiMedall color='white' height="20" width="20" />} link="/players" />
+            <Asidedetails text="USERS" icon={<TbUsers color='white' height="20" width="20" />} link="users" />
+            <Asidedetails text="STORE" icon={<FaStore color='white' height="20" width="20" />} link="/store" />
+            <Asidedetails text="BADGES" icon={<TfiMedall color='white' height="20" width="20" />} link="/badges" />
           </div>
         </div>
         <div className='flex justify-center'>

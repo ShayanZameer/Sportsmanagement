@@ -15,7 +15,8 @@ const Layout2 = ({ showPlayerSection, showUserProfileHeader }) => {
             </div>
             {showPlayerSection && (
                 <div>
-                    <Playersection />
+                    <Playersection text="PLAYERS" showAddButton={true} buttonText="ADD" />
+
                 </div>
             )}
 

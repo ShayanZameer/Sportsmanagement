@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
 
                 path: "users",
-                element: <User /> // Ensure this route is correctly set up
+                element: <User />
 
             },
 
