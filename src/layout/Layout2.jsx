@@ -1,34 +1,13 @@
-// import React from 'react'
 
-// import Navbar from '../components/Navbar'
-// import Playersection from '../components/Playersection'
-
-// const Layout2 = () => {
-//     return (
-//         <div>
-//             <div>
-
-//                 <Navbar />
-
-//             </div>
-
-//             <div>
-
-//                 <Playersection />
-
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Layout2;
 
 
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Playersection from '../components/Playersection';
+import UserProfileHeader from '../components/UserProfileHeader';
+import Userprofile from '../components/Userprofile';
 
-const Layout2 = ({ showPlayerSection }) => {
+const Layout2 = ({ showPlayerSection, showUserProfileHeader }) => {
     return (
         <div>
             <div>
@@ -39,8 +18,11 @@ const Layout2 = ({ showPlayerSection }) => {
                     <Playersection />
                 </div>
             )}
+
         </div>
     );
 };
 
 export default Layout2;
+
+

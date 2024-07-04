@@ -6,9 +6,11 @@ import Aside from '../components/Aside';
 import { Outlet, useLocation } from 'react-router-dom';
 import Layout2 from './Layout2';
 
+import UserProfileHeader from '../components/UserProfileHeader';
+
 const Layout = () => {
     const location = useLocation();
-    const isUserProfilingRoute = location.pathname === "/user-profile";
+    const isUserProfilingRoute = location.pathname === "/user-profile" || location.pathname === "/athlete";
 
     console.log(isUserProfilingRoute);
 
@@ -22,9 +24,10 @@ const Layout = () => {
             {/* Main content area */}
             <div className="flex-1 flex flex-col">
                 {/* Navbar and Playersection */}
-                <Layout2 showPlayerSection={!isUserProfilingRoute} />
+                <Layout2 showPlayerSection={!isUserProfilingRoute} showUserProfileHeader={!isUserProfilingRoute} />
 
-                <div className="flex-1 main-section overflow-auto">
+
+                <div className="flex-1 flex  justify-between overflow-auto main-section">
                     <main>
                         <Outlet />
                     </main>
@@ -35,4 +38,6 @@ const Layout = () => {
 };
 
 export default Layout;
+
+
 

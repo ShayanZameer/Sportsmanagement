@@ -14,6 +14,9 @@ import Playersection from '../components/Playersection';
 import Mainsection from '../components/Mainsection';
 
 import Layout2 from '../layout/Layout2';
+import Athlete from '../components/Athlete';
+
+import ProfileDetails from '../components/ProfileDetails';
 
 const router = createBrowserRouter([
     {
@@ -25,16 +28,29 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Mainsection />,
             },
+
+
             {
                 path: "user-profile",
                 element: <Userprofile />,
             },
+
+            {
+                path: "athlete",
+                element: <Athlete />
+            }
         ],
     },
     {
         path: "/login",
         element: <Login />,
     },
+
+
+
+
+
+
 ]);
 
 export default router;

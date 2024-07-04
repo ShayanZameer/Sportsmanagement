@@ -21,19 +21,19 @@ export default {
         xmm: "430px",
         sm: "576px",
         smm: "673px",
-        mdd: "653px",
+        mdd: "753px",
         md: "837px",
         lg: "992px",
         lgg: "1100px",
         xl: "1201px",
         "2xl": "1401px",
       },
-      
 
-     
+
+
     },
   },
   plugins: [
-    
+
   ],
 }
