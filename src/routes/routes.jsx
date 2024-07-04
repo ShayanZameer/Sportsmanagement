@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         children: [
 
             {
-                path: "/",
+                path: "players",
                 element: <Mainsection />,
             },
 
@@ -59,11 +59,7 @@ const router = createBrowserRouter([
             },
 
 
-            {
 
-                path: "players",
-                element: <Players />
-            },
 
             {
 
