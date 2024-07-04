@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-const Asidedetails = ({text, icon}) => {
+const Asidedetails = ({ text, icon, link }) => {
   return (
-    <div className='flex bg-[#3669C9] items-center'>
+    <Link to={link} className='flex bg-[#3669C9] items-center'>
 
-        <div className='h-5 w-5'>{icon}</div>
-        <p className=' px-2 font-normal font-bebas text-white'>{text}</p>
+      <div className='h-5 w-5'>{icon}</div>
+      <p className=' px-2 font-normal font-bebas text-white'>{text}</p>
 
 
-    </div>
+    </Link>
   )
 }
 
