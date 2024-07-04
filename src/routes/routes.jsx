@@ -1,33 +1,4 @@
-// // routes/routes.jsx
-// import React from 'react';
-// import { createBrowserRouter } from 'react-router-dom';
-// import Login from '../Screens/Login';
-// import Dashboard from '../Screens/Dashboard';
-// import Userprofile from '../components/Userprofile';
 
-// import Layout from '../layout/Layout';
-// const router = createBrowserRouter([
-//     {
-//         path: "/",
-//         element: <Layout />, // Use the layout component
-//         children: [
-//             {
-//                 path: "/",
-//                 element: <Dashboard />, // Main content
-//             },
-//             {
-//                 path: "/user-profiling",
-//                 element: <Userprofile />, // User Profiling section
-//             },
-//         ],
-//     },
-//     {
-//         path: "/login",
-//         element: <Login />,
-//     },
-// ]);
-
-// export default router;
 
 
 // routes/routes.jsx
@@ -37,20 +8,26 @@ import Login from '../Screens/Login';
 import Dashboard from '../Screens/Dashboard';
 import Userprofile from '../components/Userprofile';
 import Layout from '../layout/Layout'; // Ensure the path is correct
+
+import Playersection from '../components/Playersection';
+
 import Mainsection from '../components/Mainsection';
+
+import Layout2 from '../layout/Layout2';
 
 const router = createBrowserRouter([
     {
-        path: "/", // Default route
-        element: <Layout />, // Layout should be the wrapper
+        path: "/",
+        element: <Layout />,
         children: [
+
             {
-                path: "/", // Default child route
-                element: <Mainsection />, // Main content
+                path: "/",
+                element: <Mainsection />,
             },
             {
-                path: "user-profiling",
-                element: <Userprofile />, // User Profiling section
+                path: "user-profile",
+                element: <Userprofile />,
             },
         ],
     },
