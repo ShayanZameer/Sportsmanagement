@@ -16,6 +16,10 @@ export default {
         dmSans: ['DM Sans', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'custom-gradient': ' linear-gradient(105.27deg, #AAC7EC 16.17%, rgba(255, 255, 255, 0) 87.53%)'
+
+      },
       screens: {
         xm: "350px",
         xmm: "430px",

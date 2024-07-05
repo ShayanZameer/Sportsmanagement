@@ -42,11 +42,11 @@ import {
 
 const App = () => {
 
-  const [isOn, setIsOn] = useState(false);
+  // const [isOn, setIsOn] = useState(false);
 
-  const handleToggle = () => {
-    setIsOn(prevState => !prevState);
-  };
+  // const handleToggle = () => {
+  //   setIsOn(prevState => !prevState);
+  // };
 
 
   return (
@@ -82,7 +82,7 @@ const App = () => {
 
       {/* <Userdetail/> */}
 
-      {/* 
+{/*       
       <Badge Name="Business" Price="$120" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Edit" bgColor="bg-[#3669C9]" ptextColour="text-[#FFFFFF]" iconColour="white" buttonTextColor="text-[#3669C9]" 
         buttonbg="bg-[white]"/> */}
 
