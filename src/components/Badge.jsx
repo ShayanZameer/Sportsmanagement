@@ -55,18 +55,22 @@ const Badge = ({ Name, Price, p1text, p2text, p3text, p4text, bgColor, buttonTex
                     <p className={`font-bold font-dmSans px-4 ${ptextColour}`}>{p4text}</p>
                 </div>
 
+                {showDiscardButton && (
+                    <div className={`w-[230px] mb-[-40px] h-[50px] rounded-md   flex items-center justify-center  ${buttonbg}`}>
+                        <button className="text-black">Discard</button>
+                    </div>
+                )}
+
             </div>
+
+
 
 
             <div className={`w-[230px] h-[50px] rounded-md border border-gray-400 flex items-center justify-center ${buttonbg}`}>
                 <button className={`${buttonTextColor}`}  >{buttonText}</button>
             </div>
 
-            {showDiscardButton && (
-                <div className={`w-[230px] h-[50px] rounded-md border border-gray-400 flex items-center justify-center mt-4 ${buttonbg}`}>
-                    <button className={`${buttonTextColor}`}>Discard</button>
-                </div>
-            )}
+
 
 
         </div>

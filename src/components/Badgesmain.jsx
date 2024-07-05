@@ -48,16 +48,16 @@ const Badgesmain = () => {
 
       <div className='flex space-x-4 justify-center mt-3 '>
 
-        <Badge Name="Business" Price="$120" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Edit" bgColor="bg-[#FFFFFF]" ptextColour="text-black" iconColour="#3669C9" buttonTextColor="text-[#3669C9]"
-          buttonbg="bg-[white]" />
+        <Badge Name="Business" Price="$120" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Save" bgColor="bg-[#FFFFFF]" ptextColour="text-black" iconColour="#3669C9" buttonTextColor="text-[#3669C9]"
+          buttonbg="bg-[white]" showDiscardButton={true} />
 
 
-        <Badge Name="Videographer" Price="$12" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Edit" bgColor="bg-white" ptextColour="text-black" iconColour="#3669C9" buttonTextColor="text-[#3669C9]"
-          buttonbg="bg-[white]" />
+        <Badge Name="Videographer" Price="$12" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Edit" bgColor="bg-white" ptextColour="text-black" iconColour="#3669C9" buttonTextColor="text-black"
+          buttonbg="bg-[white]" showDiscardButton={false} />
 
 
         <Badge Name="Organization" Price="$40" p1text="Employee Notifications" p2text="Marketing and Promotion" p3text="Employee Verification" p4text="Subscriber Notifications" buttonText="Edit" bgColor="bg-[#3669C9]" ptextColour="text-[#FFFFFF]" iconColour="white" buttonTextColor="text-[#3669C9]"
-          buttonbg="bg-[white]" />
+          buttonbg="bg-[white]" showDiscardButton={false} />
 
 
 
