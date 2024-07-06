@@ -13,17 +13,34 @@ const Badgesmain = () => {
   const [isOn, setIsOn] = useState(false);
   const [isMonthly, setIsMonthly] = useState(true);
   const [editMode, setEditMode] = useState({});
+  const [activeBadge, setActiveBadge] = useState(null);
+
 
   const handleToggle = () => {
     setIsOn(prevState => !prevState);
     setIsMonthly(!isMonthly);
   };
 
+  
+
+
   const handleEditClick = (badgeName) => {
-    setEditMode(prevState => ({
-      ...prevState,
-      [badgeName]: !prevState[badgeName]
-    }));
+    if (activeBadge === badgeName) {
+      setActiveBadge(null); // If clicking on the already active badge, reset it
+      setEditMode(prevState => ({
+        ...prevState,
+        [badgeName]: !prevState[badgeName]
+      }));
+    } else {
+      setActiveBadge(badgeName); // Set the new active badge
+      setEditMode({
+        [badgeName]: true,
+        ...Object.keys(editMode).reduce((acc, key) => {
+          if (key !== badgeName) acc[key] = false;
+          return acc;
+        }, {})
+      });
+    }
   };
 
 
@@ -80,6 +97,8 @@ const Badgesmain = () => {
           monthColour="text-[#656565]"
           editclick={() => handleEditClick('Business')}
           isEditMode={editMode['Business'] || false}
+          isDisabled={activeBadge !== null && activeBadge !== 'Business'}
+
         />
 
         <Badge
@@ -97,6 +116,8 @@ const Badgesmain = () => {
           isMonthly={isMonthly}
           editclick={() => handleEditClick('Videographer')}
           isEditMode={editMode['Videographer'] || false}
+          isDisabled={activeBadge !== null && activeBadge !== 'Videographer'} // Disable if another badge is being edited
+
         />
 
         <Badge
@@ -114,6 +135,8 @@ const Badgesmain = () => {
           isMonthly={isMonthly}
           editclick={() => handleEditClick('Organization')}
           isEditMode={editMode['Organization'] || false}
+          isDisabled={activeBadge !== null && activeBadge !== 'Organization'} // Disable if another badge is being edited
+
         />
       </div>
 

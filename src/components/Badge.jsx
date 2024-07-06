@@ -5,11 +5,14 @@ import React, { useState, useEffect } from 'react';
 import { FaCheck } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { FaPlusSquare } from "react-icons/fa";
+import { Tooltip } from 'react-tooltip';
+
+
 
 const Badge = ({
     Name, Price, bgColor, buttonText, ptextColour,
     iconColour, buttonbg, buttonTextColor, showDiscardButton, monthColour,
-    isMonthly, editclick, isEditMode
+    isMonthly, editclick, isEditMode, isDisabled
 }) => {
     const [texts, setTexts] = useState([]);
     const [showInput, setShowInput] = useState(false);
@@ -112,12 +115,16 @@ const Badge = ({
                             <div key={index} className='flex items-center'>
                                 <p className={`font-bold font-dmSans px-4 w-[250px] ${ptextColour}`}>{text}</p>
                                 {isEditMode && (
-                                    <TiDeleteOutline
-                                        onClick={() => handleTemporaryDeleteClick(index)}
-                                        size={24}
-                                        color={iconColour}
-                                        className='cursor-pointer ml-2'
-                                    />
+                                    <>
+                                        <TiDeleteOutline
+                                            onClick={() => handleTemporaryDeleteClick(index)}
+                                            size={24}
+                                            color={iconColour}
+                                            className='cursor-pointer ml-2'
+                                        />
+                                        <Tooltip id={`tempDeleteTooltip-${index}`} place="top" effect="solid" />
+                                    </>
+
                                 )}
                             </div>
                         ))}
@@ -154,7 +161,7 @@ const Badge = ({
             )}
 
             <div className='flex justify-center mt-1'>
-                <div onClick={showInput ? handleSaveClick : editclick} className={`w-[200px] h-[40px] rounded-md border border-gray-400 flex items-center justify-center ${showInput ? (bgColor === 'bg-[#FFFFFF]' ? 'bg-blue-500' : 'bg-white') : buttonbg}`}>
+                <div onClick={isDisabled ? null : (showInput ? handleSaveClick : editclick)} className={`w-[200px] h-[40px] rounded-md border border-gray-400 flex items-center justify-center ${showInput ? (bgColor === 'bg-[#FFFFFF]' ? 'bg-blue-500' : 'bg-white') : buttonbg}`}>
                     <button className={`${buttonTextColor} flex justify-center`}>{showInput ? 'Save' : buttonText}</button>
                 </div>
             </div>
@@ -163,12 +170,5 @@ const Badge = ({
 };
 
 export default Badge;
-
-
-
-
-
-
-
 
 
