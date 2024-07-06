@@ -28,12 +28,10 @@ const Badgesmain = () => {
 
   useEffect(() => {
     const savedEditMode = JSON.parse(localStorage.getItem('editMode')) || {};
-    console.log('Loaded editMode state:', savedEditMode);
     setEditMode(savedEditMode);
   }, []);
 
   useEffect(() => {
-    console.log('Saving editMode state:', editMode);
     localStorage.setItem('editMode', JSON.stringify(editMode));
   }, [editMode]);
 
@@ -45,7 +43,7 @@ const Badgesmain = () => {
     <div className='relative w-[190vh] bg-custom-gradient h-[90%]'>
       <div className='flex items-center'>
         <div className='flex-1 justify-start px-3'>
-          <p className='texr-black font-bebas font-medium text-[60px]'>Badges</p>
+          <p className='text-black font-bebas font-medium text-[60px]'>Badges</p>
         </div>
 
         <div className='flex flex-1 space-x-2'>
@@ -54,15 +52,21 @@ const Badgesmain = () => {
           <p>Yearly</p>
         </div>
 
-        <Custombutton text="Assign Badge" width="w-[158px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-black" onclick={handleAssignBadge} />
+        <Custombutton
+          text="Assign Badge"
+          width="w-[158px]"
+          height="h-[42px]"
+          bgColour="bg-[#3669C9]"
+          bgTextColour="text-black"
+          onclick={handleAssignBadge}
+        />
       </div>
 
-      <div className='flex space-x-4 justify-center mt-3 overflow-auto'>
+      <div className='main-section flex space-x-4 justify-center mt-3 overflow-auto'>
         <Badge
           key="Business"
           Name="Business"
           Price="$120"
-          initialTexts={["Employee Notifications", "Marketing and Promotion", "Employee Verification", "Subscriber Notifications"]}
           buttonText="Edit"
           bgColor="bg-[#FFFFFF]"
           ptextColour="text-black"
@@ -80,7 +84,6 @@ const Badgesmain = () => {
           key="Videographer"
           Name="Videographer"
           Price="$12"
-          initialTexts={["Employee Notifications", "Marketing and Promotion", "Employee Verification", "Subscriber Notifications"]}
           buttonText="Edit"
           bgColor="bg-white"
           ptextColour="text-black"
@@ -98,7 +101,6 @@ const Badgesmain = () => {
           key="Organization"
           Name="Organization"
           Price="$40"
-          initialTexts={["Employee Notifications", "Marketing and Promotion", "Employee Verification", "Subscriber Notifications"]}
           buttonText="Edit"
           bgColor="bg-[#3669C9]"
           ptextColour="text-[#FFFFFF]"
@@ -132,6 +134,7 @@ const Badgesmain = () => {
 }
 
 export default Badgesmain;
+
 
 
 
