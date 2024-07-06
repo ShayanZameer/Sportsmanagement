@@ -21,18 +21,18 @@ const Badgesmain = () => {
     setIsMonthly(!isMonthly);
   };
 
-  
+
 
 
   const handleEditClick = (badgeName) => {
     if (activeBadge === badgeName) {
-      setActiveBadge(null); // If clicking on the already active badge, reset it
+      setActiveBadge(null);
       setEditMode(prevState => ({
         ...prevState,
         [badgeName]: !prevState[badgeName]
       }));
     } else {
-      setActiveBadge(badgeName); // Set the new active badge
+      setActiveBadge(badgeName);
       setEditMode({
         [badgeName]: true,
         ...Object.keys(editMode).reduce((acc, key) => {

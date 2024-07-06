@@ -1,13 +1,12 @@
 
 
 
+
 import React, { useState, useEffect } from 'react';
 import { FaCheck } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { FaPlusSquare } from "react-icons/fa";
-import { Tooltip } from 'react-tooltip';
-
-
+import Tooltip from './Tooltip';
 
 const Badge = ({
     Name, Price, bgColor, buttonText, ptextColour,
@@ -16,7 +15,7 @@ const Badge = ({
 }) => {
     const [texts, setTexts] = useState([]);
     const [showInput, setShowInput] = useState(false);
-    const [temporaryTexts, setTemporaryTexts] = useState([]); // State for temporary texts
+    const [temporaryTexts, setTemporaryTexts] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
@@ -29,7 +28,7 @@ const Badge = ({
             } catch (error) {
                 console.error('Error loading texts from localStorage:', error);
             } finally {
-                setIsLoading(false); // Data loaded
+                setIsLoading(false);
             }
         };
 
@@ -106,25 +105,25 @@ const Badge = ({
                         {texts.map((text, index) => (
                             <div key={index} className='flex items-center'>
                                 {!isEditMode && <FaCheck color={iconColour} />}
-                                <p className={`font-bold font-dmSans px-4 w-[250px] ${ptextColour}`}>{text}</p>
-                                {isEditMode && <TiDeleteOutline onClick={() => handleDeleteClick(index)} size={24} color={iconColour} />}
+                                <p className={`font-bold font-dmSans px-4 w-[230px] ${ptextColour}`}>{text}</p>
+                                {isEditMode && (
+                                    <div className='mb-4'>
+                                        <Tooltip content="Remove">
+                                            <TiDeleteOutline cursor="pointer" onClick={() => handleDeleteClick(index)} size={24} color={iconColour} />
+                                        </Tooltip>
+                                    </div>
+                                )}
                             </div>
                         ))}
-
                         {showInput && temporaryTexts.map((text, index) => (
                             <div key={index} className='flex items-center'>
-                                <p className={`font-bold font-dmSans px-4 w-[250px] ${ptextColour}`}>{text}</p>
+                                <p className={`font-bold font-dmSans px-4 w-[217px] ${ptextColour}`}>{text}</p>
                                 {isEditMode && (
-                                    <>
-                                        <TiDeleteOutline
-                                            onClick={() => handleTemporaryDeleteClick(index)}
-                                            size={24}
-                                            color={iconColour}
-                                            className='cursor-pointer ml-2'
-                                        />
-                                        <Tooltip id={`tempDeleteTooltip-${index}`} place="top" effect="solid" />
-                                    </>
-
+                                    <div className="ml-1 mb-4">
+                                        <Tooltip content="Delete">
+                                            <TiDeleteOutline cursor="pointer" onClick={() => handleTemporaryDeleteClick(index)} size={24} color={iconColour} className='cursor-pointer ml-2' />
+                                        </Tooltip>
+                                    </div>
                                 )}
                             </div>
                         ))}
@@ -145,7 +144,7 @@ const Badge = ({
                                     type="text"
                                     value={inputValue}
                                     onChange={handleInputChange}
-                                    onKeyPress={handleKeyPress} // Handle Enter key
+                                    onKeyPress={handleKeyPress}
                                     placeholder="Enter new text"
                                     className="w-full px-2 py-1 border border-gray-400 rounded-md"
                                 />
@@ -160,8 +159,8 @@ const Badge = ({
                 </div>
             )}
 
-            <div className='flex justify-center mt-1'>
-                <div onClick={isDisabled ? null : (showInput ? handleSaveClick : editclick)} className={`w-[200px] h-[40px] rounded-md border border-gray-400 flex items-center justify-center ${showInput ? (bgColor === 'bg-[#FFFFFF]' ? 'bg-blue-500' : 'bg-white') : buttonbg}`}>
+            <div className='flex justify-center items-end mt-1'>
+                <div onClick={isDisabled ? null : (showInput ? handleSaveClick : editclick)} className={`w-[200px] h-[40px] rounded-md border border-gray-400 flex items-center justify-center hover:bg-slate-500 ${showInput ? (bgColor === 'bg-[#FFFFFF]' ? 'bg-blue-500' : 'bg-white') : buttonbg}`}>
                     <button className={`${buttonTextColor} flex justify-center`}>{showInput ? 'Save' : buttonText}</button>
                 </div>
             </div>
