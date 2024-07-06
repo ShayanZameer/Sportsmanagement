@@ -26,6 +26,8 @@ const Badgesmain = () => {
     }));
   };
 
+
+
   useEffect(() => {
     const savedEditMode = JSON.parse(localStorage.getItem('editMode')) || {};
     setEditMode(savedEditMode);
