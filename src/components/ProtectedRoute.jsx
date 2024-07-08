@@ -7,9 +7,8 @@ import { getAuth } from 'firebase/auth';
 
 const ProtectedRoute = ({ element: Component, ...rest }) => {
     const auth = getAuth();
-    const user = auth.currentUser; // Check if user is authenticated
+    const user = auth.currentUser;
 
-    // Render the component if authenticated, otherwise redirect to login
     return user ? <Component {...rest} /> : <Navigate to="/" />;
 };
 
