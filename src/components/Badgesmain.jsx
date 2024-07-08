@@ -52,7 +52,6 @@ const Badgesmain = () => {
   }, [editMode]);
 
   const handleAssignBadge = () => {
-    console.log("ASSIGN BADGE IS CLICKED");
     setShowAssignBadge(true);
   };
 

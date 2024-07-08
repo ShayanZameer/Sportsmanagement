@@ -158,8 +158,15 @@ const Badge = ({
             )}
 
             <div className='flex justify-center items-end mt-1'>
-                <div onClick={isDisabled ? null : (showInput ? handleSaveClick : editclick)} className={`w-[200px] h-[40px] rounded-md border border-gray-400 flex items-center justify-center hover:bg-slate-200 ${showInput ? (bgColor === 'bg-[#FFFFFF]' ? 'bg-blue-500' : 'bg-white') : buttonbg}`}>
-                    <button className={`${buttonTextColor} flex justify-center`}>{showInput ? 'Save' : buttonText}</button>
+
+
+                <div
+                    onClick={isDisabled ? null : (showInput ? handleSaveClick : editclick)}
+                    className={`w-[200px] h-[40px] rounded-md border border-gray-400 flex items-center justify-center hover:bg-slate-200 ${isDisabled ? 'cursor-not-allowed' : 'cursor-pointer'} ${showInput ? 'bg-blue-500' : buttonbg}`}
+                >
+                    <button className={`${buttonTextColor} flex justify-center`}>
+                        {showInput ? 'Save' : buttonText}
+                    </button>
                 </div>
             </div>
         </div>
