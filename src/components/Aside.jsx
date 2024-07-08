@@ -16,7 +16,7 @@ import { FaBars } from "react-icons/fa";
 
 const Aside = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('/'); // Default active link
+  const [activeLink, setActiveLink] = useState('/players');
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
