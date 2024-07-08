@@ -11,9 +11,9 @@ import { useState } from 'react';
 import image from "../assets/images/warning.png"
 
 
-const Assignbadge = ({heading}) => {
+const Assignbadge = ({ heading, onclose, onsave }) => {
 
-    
+
   const [isOn, setIsOn] = useState(false);
 
   const handleToggle = () => {
@@ -23,36 +23,30 @@ const Assignbadge = ({heading}) => {
     <div className='h-[450px] w-[480px] bg-slate-100 rounded-2xl'>
 
 
-        <div className='flex justify-between items-center py-4 px-6 border-b'>
+      <div className='flex justify-between items-center py-4 px-6 border-b'>
 
-            <p className='font-dmSans  font-medium'>{heading}</p>
-            <div className='bg-white rounded-sm'> 
+        <p className='font-dmSans  font-medium'>{heading}</p>
+        <div className='bg-white rounded-sm'>
 
-            <RxCross2 color='#5E5873' />
-            </div>
-
+          <RxCross2 cursor="pointer" onClick={onclose} color='#5E5873' />
         </div>
 
-        <div className='flex flex-col px-6   my-8'>
+      </div>
 
-            <p className='font-dmSans font-medium'>User Email</p>
+      <div className='flex flex-col px-6   my-8'>
 
-            <input className='my-4 bg-[#D6D5D5] w-[430px] py-4 h-12' type='text' value="   iamzai@gmail.com"/>
-        </div>
-        <div className='flex flex-col px-6 mt-[-30px]    '>
+        <p className='font-dmSans font-medium'>User Email</p>
 
-            <p className='font-dmSans font-medium'>Subscription Type</p>
+        <input className='my-4 bg-[#D6D5D5] w-[430px] py-4 h-12' type='text' value="   iamzai@gmail.com" />
+      </div>
+      <div className='flex flex-col px-6 mt-[-30px]    '>
 
-            <div className='flex flex-row justify-between py-4'>
-            <Custombutton  text="Business" width="w-[120px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white"/>
-            <Custombutton  text="Videographer" width="w-[120px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white"/>
-            <Custombutton  text="Organization" width="w-[120px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white"/>
+        <p className='font-dmSans font-medium'>Subscription Type</p>
 
-
-
-
-            </div>
-
+        <div className='flex flex-row justify-between py-4'>
+          <Custombutton text="Business" width="w-[120px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white" />
+          <Custombutton text="Videographer" width="w-[120px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white" />
+          <Custombutton text="Organization" width="w-[120px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white" />
 
 
 
@@ -60,32 +54,38 @@ const Assignbadge = ({heading}) => {
         </div>
 
 
-        <div className='flex justify-between px-6'>
-
-            <p className='font-dmSans font-medium'>Duration</p>
-
-            <div className='flex items-center'>
-                <p className='font-normal font-dmSans px-2'>Monthly</p>
-
-                <Toggleswitch isOn={isOn} handleToggle={handleToggle} />
 
 
-                <p className='font-normal font-dmSans px-2 '>Yearly</p>
-            </div>
+
+      </div>
+
+
+      <div className='flex justify-between px-6'>
+
+        <p className='font-dmSans font-medium'>Duration</p>
+
+        <div className='flex items-center'>
+          <p className='font-normal font-dmSans px-2'>Monthly</p>
+
+          <Toggleswitch isOn={isOn} handleToggle={handleToggle} />
+
+
+          <p className='font-normal font-dmSans px-2 '>Yearly</p>
         </div>
+      </div>
 
-        <div className='flex flex-col items-center my-6'>
+      <div className='flex flex-col items-center my-6'>
 
-        <Custombutton  text="Yes" width="w-[335px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white"/>
+        <Custombutton text="Yes" width="w-[335px]" height="h-[42px]" bgColour="bg-[#3669C9]" bgTextColour="text-white" onclick={onsave} />
 
         <div className='py-3'>
 
-        <Custombutton  text="No" width="w-[335px]" height="h-[42px]" bgColour="bg-[#D6D5D5]" bgTextColour="text-black"/>
+          <Custombutton text="No" width="w-[335px]" height="h-[42px]" bgColour="bg-[#D6D5D5]" bgTextColour="text-black" onclick={onclose} />
         </div>
 
 
 
-        </div>
+      </div>
 
 
 

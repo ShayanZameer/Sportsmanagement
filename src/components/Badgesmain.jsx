@@ -8,12 +8,16 @@ import Playersection from './Playersection';
 import Subscribercomponent1 from './Subscribercomponent1';
 import Badge from './Badge';
 import Subscribercomponent2 from './Subscribercomponent2';
+import Assignbadge from './Assignbadge';
+import toast from 'react-hot-toast';
 
 const Badgesmain = () => {
   const [isOn, setIsOn] = useState(false);
   const [isMonthly, setIsMonthly] = useState(true);
   const [editMode, setEditMode] = useState({});
   const [activeBadge, setActiveBadge] = useState(null);
+
+  const [showAssignBadge, setShowAssinBadge] = useState(false);
 
 
   const handleToggle = () => {
@@ -56,8 +60,21 @@ const Badgesmain = () => {
 
   const handleAssignBadge = () => {
     console.log("ASSIGN BADGE IS CLICKED");
+    setShowAssinBadge(true);
   };
 
+  const handleCloseAssignBadge = () => {
+    setShowAssinBadge(false);
+  };
+
+  const handleSaveAssignBadge = () => {
+
+    toast.success(" Badge is Assigned");
+    setShowAssinBadge(false);
+
+
+
+  }
   return (
     <div className='relative w-[190vh] bg-custom-gradient h-[90%]'>
       <div className='flex items-center'>
@@ -71,14 +88,18 @@ const Badgesmain = () => {
           <p>Yearly</p>
         </div>
 
-        <Custombutton
-          text="Assign Badge"
-          width="w-[158px]"
-          height="h-[42px]"
-          bgColour="bg-[#3669C9]"
-          bgTextColour="text-black"
-          onclick={handleAssignBadge}
-        />
+        <div className='pr-3'>
+
+
+          <Custombutton
+            text="Assign Badge"
+            width="w-[158px]"
+            height="h-[42px]"
+            bgColour="bg-[#3669C9]"
+            bgTextColour="text-black"
+            onclick={handleAssignBadge}
+          />
+        </div>
       </div>
 
       <div className='main-section flex space-x-4 justify-center mt-3 overflow-auto'>
@@ -140,6 +161,8 @@ const Badgesmain = () => {
         />
       </div>
 
+
+
       <div>
         <Playersection text="SUBSCRIBERS" showAddButton={false} />
       </div>
@@ -154,6 +177,18 @@ const Badgesmain = () => {
         <Subscribercomponent2 />
         <Subscribercomponent2 />
       </div>
+
+
+      {
+
+        showAssignBadge && (
+          <div className='fixed inset-0 flex justify-center items-center'>
+
+            <Assignbadge heading="Assign Badge" onclose={handleCloseAssignBadge} onsave={handleSaveAssignBadge} />
+          </div>
+        )
+
+      }
     </div>
   );
 }
