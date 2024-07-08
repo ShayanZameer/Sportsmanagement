@@ -10,7 +10,7 @@ import UserProfileHeader from '../components/UserProfileHeader';
 
 const Layout = () => {
     const location = useLocation();
-    const isUserProfilingRoute = location.pathname === "/dashboard/user-profile" || location.pathname === "/athlete" || location.pathname === "/users" || location.pathname === "/dashboard/store" || location.pathname === "/dashboard/badges";
+    const isUserProfilingRoute = location.pathname === "/dashboard/user-profile" || location.pathname === "/dashboard/athlete" || location.pathname === "/dashboard/users" || location.pathname === "/dashboard/store" || location.pathname === "/dashboard/badges";
 
     console.log(isUserProfilingRoute);
 

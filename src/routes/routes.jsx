@@ -1,7 +1,6 @@
 
 
 
-// routes/routes.jsx
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Login from '../Screens/Login';
@@ -10,7 +9,7 @@ import Userprofile from '../components/Userprofile';
 import Layout from '../layout/Layout'; // Ensure the path is correct
 import Players from '../components/Players';
 import Badgesmain from '../components/Badgesmain';
-
+import ProtectedRoute from '../components/ProtectedRoute';
 import User from '../components/User';
 
 import Playersection from '../components/Playersection';
@@ -32,30 +31,30 @@ const router = createBrowserRouter([
 
             {
                 path: "players",
-                element: <Mainsection />,
+                element: <ProtectedRoute element={Mainsection} />,
             },
 
 
             {
                 path: "user-profile",
-                element: <Userprofile />,
+                element: <ProtectedRoute element={Userprofile} />,
             },
 
             {
                 path: "athlete",
-                element: <Athlete />
+                element: <ProtectedRoute element={Athlete} />
             },
             {
 
                 path: "users",
-                element: <User />
+                element: <ProtectedRoute element={User} />
 
             },
 
             {
 
                 path: "store",
-                element: <Store />
+                element: <ProtectedRoute element={Store} />
             },
 
 
@@ -64,7 +63,7 @@ const router = createBrowserRouter([
             {
 
                 path: "badges",
-                element: <Badgesmain />
+                element: <ProtectedRoute element={Badgesmain} />
 
             },
 
@@ -83,4 +82,6 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
+
 

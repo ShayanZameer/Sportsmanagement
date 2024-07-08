@@ -19,7 +19,7 @@ const Playersection = ({ text, showAddButton, buttonText }) => {
         {showAddButton && (
           <div className='ml-4'>
             <Link
-              to="/user-profile"
+              to="/dashboard/user-profile"
               onClick={handleClick}
               className="flex items-center px-3 py-2 bg-blue-600 text-white relative text-sm sm:text-base"
               style={{ clipPath: 'polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)' }}

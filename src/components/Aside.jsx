@@ -6,10 +6,16 @@ import { TbUsers } from "react-icons/tb";
 import { FaStore } from "react-icons/fa6";
 import { TfiMedall } from "react-icons/tfi";
 import { FaBars } from "react-icons/fa";
+import toast from 'react-hot-toast';
 
-const Aside = () => {
+import { getAuth, signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
+const Aside = () => { 
+
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('/players');
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -18,6 +24,28 @@ const Aside = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
+
+  const handleLogout = async () => {
+
+    console.log("entering in logout");
+
+    try {
+
+      const auth = getAuth();
+
+      await signOut(auth);
+
+      toast.success("LOGOUT SUCCESSFULLY");
+
+      navigate('/')
+
+    } catch (error) {
+      console.log("there is some error in logout", error);
+      toast.error("ERROR IN LOGOUT");
+
+    }
+
+  }
 
   return (
     <>
@@ -40,11 +68,11 @@ const Aside = () => {
             <Asidedetails text="BADGES" icon={TfiMedall} link="/dashboard/badges" isActive={activeLink === "/badges"} onClick={() => handleLinkClick("/badges")} />
           </div>
         </div>
-        <div className='flex justify-center cursor-pointer '>
+        <div className='flex justify-center cursor-pointer  '>
           <div className='my-1'>
-            <LuLogOut color='white' />
+            <LuLogOut onClick={handleLogout} color='white' />
           </div>
-          <p className='px-2 pb-5 font-dmSans text-white'>Logout</p>
+          <p onClick={handleLogout} className='px-2 pb-5 font-dmSans text-white'>Logout</p>
         </div>
       </div>
 
