@@ -26,7 +26,7 @@ import Store from '../components/Store';
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/dashboard",
         element: <Layout />,
         children: [
 
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: "/login",
+        path: "/",
         element: <Login />,
     },
 
