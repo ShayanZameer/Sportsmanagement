@@ -1,13 +1,9 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { FaCheck } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { FaPlusSquare } from "react-icons/fa";
 import Tooltip from './Tooltip';
-
+import toast from 'react-hot-toast';
 const Badge = ({
     Name, Price, bgColor, buttonText, ptextColour,
     iconColour, buttonbg, buttonTextColor, showDiscardButton, monthColour,
@@ -57,6 +53,8 @@ const Badge = ({
             setInputValue("");
             setShowInput(false);
         }
+        toast.success('Successfully Saved');
+
     };
 
     const handleDiscardClick = () => {
