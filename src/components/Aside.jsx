@@ -1,6 +1,10 @@
 
 
 
+
+
+
+
 import React, { useState } from 'react';
 import wLogo from "../assets/images/WhiteLogo.png";
 import Asidedetails from './Asidedetails';
@@ -12,9 +16,14 @@ import { FaBars } from "react-icons/fa";
 
 const Aside = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('/'); // Default active link
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link); // Set the clicked link as active
   };
 
   return (
@@ -34,10 +43,10 @@ const Aside = () => {
             <p className='text-[#ffffff] font-dmSans'>JBSKATE</p>
           </div>
           <div className='flex flex-col items-center mr-10 space-y-4 my-3'>
-            <Asidedetails text="PLAYERS" icon={<TfiMedall color='white' height="20" width="20" />} link="/players" />
-            <Asidedetails text="USERS" icon={<TbUsers color='white' height="20" width="20" />} link="users" />
-            <Asidedetails text="STORE" icon={<FaStore color='white' height="20" width="20" />} link="/store" />
-            <Asidedetails text="BADGES" icon={<TfiMedall color='white' height="20" width="20" />} link="/badges" />
+            <Asidedetails text="PLAYERS" icon={TfiMedall} link="/players" isActive={activeLink === "/players"} onClick={() => handleLinkClick("/players")} />
+            <Asidedetails text="USERS" icon={TbUsers} link="/users" isActive={activeLink === "/users"} onClick={() => handleLinkClick("/users")} />
+            <Asidedetails text="STORE" icon={FaStore} link="/store" isActive={activeLink === "/store"} onClick={() => handleLinkClick("/store")} />
+            <Asidedetails text="BADGES" icon={TfiMedall} link="/badges" isActive={activeLink === "/badges"} onClick={() => handleLinkClick("/badges")} />
           </div>
         </div>
         <div className='flex justify-center'>
@@ -54,9 +63,3 @@ const Aside = () => {
 };
 
 export default Aside;
-
-
-
-
-
-

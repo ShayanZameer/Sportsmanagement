@@ -16,17 +16,12 @@ const Badgesmain = () => {
   const [isMonthly, setIsMonthly] = useState(true);
   const [editMode, setEditMode] = useState({});
   const [activeBadge, setActiveBadge] = useState(null);
-
-  const [showAssignBadge, setShowAssinBadge] = useState(false);
-
+  const [showAssignBadge, setShowAssignBadge] = useState(false);
 
   const handleToggle = () => {
     setIsOn(prevState => !prevState);
     setIsMonthly(!isMonthly);
   };
-
-
-
 
   const handleEditClick = (badgeName) => {
     if (activeBadge === badgeName) {
@@ -47,8 +42,6 @@ const Badgesmain = () => {
     }
   };
 
-
-
   useEffect(() => {
     const savedEditMode = JSON.parse(localStorage.getItem('editMode')) || {};
     setEditMode(savedEditMode);
@@ -60,21 +53,18 @@ const Badgesmain = () => {
 
   const handleAssignBadge = () => {
     console.log("ASSIGN BADGE IS CLICKED");
-    setShowAssinBadge(true);
+    setShowAssignBadge(true);
   };
 
   const handleCloseAssignBadge = () => {
-    setShowAssinBadge(false);
+    setShowAssignBadge(false);
   };
 
   const handleSaveAssignBadge = () => {
+    toast.success("Badge is Assigned");
+    setShowAssignBadge(false);
+  };
 
-    toast.success(" Badge is Assigned");
-    setShowAssinBadge(false);
-
-
-
-  }
   return (
     <div className='relative w-[190vh] bg-custom-gradient h-[90%]'>
       <div className='flex items-center'>
@@ -89,8 +79,6 @@ const Badgesmain = () => {
         </div>
 
         <div className='pr-3'>
-
-
           <Custombutton
             text="Assign Badge"
             width="w-[158px]"
@@ -119,7 +107,6 @@ const Badgesmain = () => {
           editclick={() => handleEditClick('Business')}
           isEditMode={editMode['Business'] || false}
           isDisabled={activeBadge !== null && activeBadge !== 'Business'}
-
         />
 
         <Badge
@@ -137,8 +124,7 @@ const Badgesmain = () => {
           isMonthly={isMonthly}
           editclick={() => handleEditClick('Videographer')}
           isEditMode={editMode['Videographer'] || false}
-          isDisabled={activeBadge !== null && activeBadge !== 'Videographer'} // Disable if another badge is being edited
-
+          isDisabled={activeBadge !== null && activeBadge !== 'Videographer'}
         />
 
         <Badge
@@ -156,12 +142,9 @@ const Badgesmain = () => {
           isMonthly={isMonthly}
           editclick={() => handleEditClick('Organization')}
           isEditMode={editMode['Organization'] || false}
-          isDisabled={activeBadge !== null && activeBadge !== 'Organization'} // Disable if another badge is being edited
-
+          isDisabled={activeBadge !== null && activeBadge !== 'Organization'}
         />
       </div>
-
-
 
       <div>
         <Playersection text="SUBSCRIBERS" showAddButton={false} />
@@ -178,22 +161,29 @@ const Badgesmain = () => {
         <Subscribercomponent2 />
       </div>
 
+      {showAssignBadge && (
+        <>
+          {/* Overlay */}
+          <div
+            className='fixed inset-0 bg-black opacity-50'
+            onClick={handleCloseAssignBadge}
+          ></div>
 
-      {
-
-        showAssignBadge && (
-          <div className='fixed inset-0 flex justify-center items-center'>
-
-            <Assignbadge heading="Assign Badge" onclose={handleCloseAssignBadge} onsave={handleSaveAssignBadge} />
+          <div className='fixed inset-0 flex justify-center items-center z-50'>
+            <Assignbadge
+              heading="Assign Badge"
+              onclose={handleCloseAssignBadge}
+              onsave={handleSaveAssignBadge}
+            />
           </div>
-        )
-
-      }
+        </>
+      )}
     </div>
   );
 }
 
 export default Badgesmain;
+
 
 
 
